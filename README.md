@@ -34,6 +34,25 @@ git push -u origin "work_from_school"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Reset the last commit to a clean state
 git reset HEAD^
 # Now add the file again, which will be tracked by LFS
@@ -46,6 +65,14 @@ git push
 
 
 
+
+# Remove the file from the commit but keep it in your local directory
+git rm --cached personal-website/src/videoplayback.mp4
+# Re-add and commit your changes without the large file
+git add .
+git commit --amend --no-edit
+# Push the fixed commit
+git push
 
 
 
