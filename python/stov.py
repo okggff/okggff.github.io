@@ -24,12 +24,17 @@ def get_coefficients(stform):
 
 def standard_to_vertex_form(standard):
     conf, A, B, C = get_coefficients(standard)
-    h = -B/(2*A)
+    h = -(-B/(2*A))
     k = A*h**2 + B*h + C
-    vertex_form = f"{conf}(x-({h}))^2+({k})"
+
+    if h > 0:
+        h = f"+{h}"
+    if k > 0:
+        k = f"+{k}"
+    vertex_form = f"{conf}(x{h})^2{k}"
     return vertex_form
 
-a = "2x^2+4x+1"
+a = input("Enter a quadratic function in standard form (e.g. 2x^2+4x+1): ")
 get_coefficients(a)
 print(standard_to_vertex_form(a))
 
