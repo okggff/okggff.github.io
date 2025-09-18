@@ -1,6 +1,6 @@
 ext/
-
-
+__pycache__/
+*.pyc
 
 
 
