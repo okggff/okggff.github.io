@@ -41,7 +41,7 @@ while True:
         threshold = cv2.threshold(difference, 25, 255, cv2.THRESH_BINARY)[1]
         start_frame = frame_bw
 
-        if threshold.sum() > 1000:
+        if threshold.sum() > 1000000:
             alarm_counter += 1
         else:
             if alarm_counter > 0:
@@ -63,7 +63,5 @@ while True:
     if key_pressed == ord("q"):
         alarm_mode = False
         break
-
-
 cap.release()
 cv2.destroyAllWindows()
